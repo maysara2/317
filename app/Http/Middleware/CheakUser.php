@@ -19,6 +19,7 @@ class CheakUser
         if(Auth::user()->type=='user'){
             return redirect('not_allowed');
         }
+        
         return $next($request);
 
     }
