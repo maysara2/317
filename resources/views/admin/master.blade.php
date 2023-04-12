@@ -52,7 +52,6 @@
                     <b class="logo-abbr"><img src="{{ asset('adminasset/images/logo.png') }}" alt=""> </b>
                     <span class="logo-compact"><img src="{{ asset('adminasset/./images/logo-compact.png') }}" alt=""></span>
                     <span class="brand-title">
-                       
                     </span>
                 </a>
             </div>
