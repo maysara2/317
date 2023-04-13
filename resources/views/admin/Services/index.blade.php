@@ -50,12 +50,12 @@
                                             <button class="btn btn-danger" onclick="return confirm('Are you sure')"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
-                                       
+
                                     </tr>
                                     @endforeach
-                                  
+
                                 </tbody>
-                              
+
                             </table>
                         </div>
                     </div>

@@ -17,9 +17,9 @@ class CheakUser
     public function handle(Request $request, Closure $next): Response
     {
         if(Auth::user()->type=='user'){
-            return redirect('not_allowed');
+            return redirect('/');
         }
-        
+
         return $next($request);
 
     }

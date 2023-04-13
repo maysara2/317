@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\Service2Controller;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SettingsController;
 
 ;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -23,9 +27,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 
 
-Route::get('/', function () {
-    return 69;
-})->name('maysara');
+// Route::get('/', function () {
+//     return 69;
+// })->name('maysara');
 
 Route::prefix('admin')->name('admin.')->middleware('auth','check_user')->group(function(){
 
@@ -33,8 +37,17 @@ Route::prefix('admin')->name('admin.')->middleware('auth','check_user')->group(f
 
         Route::resource('service',ServiceController::class);
         Route::resource('project',ProjectController::class);
+
+        Route::resource('setting',SettingsController::class);
+        Route::resource('service2',Service2Controller::class);
+        Route::resource('about',AboutController::class);
 });
 
+
+
+
+
+    Route::get('/',[MainController::class,'home'])->name('site.index');
 });
 
 Auth::routes();

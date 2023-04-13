@@ -41,7 +41,7 @@ class ProjectController extends Controller
             'content_ar'=>'required',
             'link'=>'required',
         ]);
-                
+
                 $img = $request->file('image_a');
                 $img_name = rand(). time().$img->getClientOriginalName();
                 $img->move(public_path('uploads/project'), $img_name);
@@ -65,10 +65,10 @@ class ProjectController extends Controller
                     'content_en'=>$request->content_en,
                     'content_ar'=>$request->content_ar,
                     'image_a' => $img_name,
-                    'image_b' => $img_name,
-                    'image_c' => $img_name,
-                    'image_d' => $img_name,
-                    
+                    'image_b' => $img_name2,
+                    'image_c' => $img_name3,
+                    'image_d' => $img_name4,
+
                 ]);
                 return redirect()->route('admin.project.index')->with('msg','Projects added successfully')->with('type', 'success');
     }

@@ -122,7 +122,9 @@
 
         <!--**********************************
             Header end ti-comment-alt
+
 @include('admin.sidebar')
+
 
 @yield('content')
 
