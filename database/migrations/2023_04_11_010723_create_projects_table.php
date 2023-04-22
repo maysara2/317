@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('name_ar');
             $table->string('content_en');
             $table->string('content_ar');
-            $table->string('image_a');
-            $table->string('image_b');
-            $table->string('image_c');
+            $table->string('image_a')->nullable();
+            $table->string('image_b')->nullable();;
+            $table->string('image_c')->nullable();;
             $table->string('image_d');
             $table->string('link')->nullable();
             $table->timestamps();

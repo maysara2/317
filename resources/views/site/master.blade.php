@@ -22,6 +22,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+
     <!-- Libraries Stylesheet   -->
     <link href="{{ asset('siteasset/lib/animate/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('siteasset/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
@@ -32,6 +33,8 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('siteasset/css/style.css') }}" rel="stylesheet">
+
+
 </head>
 {{--  @if (app()->currentLocale() =='ar')
 <style>
@@ -69,27 +72,26 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-3">
                     <h4 class="text-white mb-3"> Contact With Me</h4>
-                    <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p> -->
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+972-59-484-1338</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>m.aljauar@gmail.com</p>
+
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:00972594841338">+972-59-484-1338</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:m.aljauar@gmail.com">m.aljauar@gmail.com</a>                    </p>
                     <div class="d-flex pt-3">
-                        <a class="btn btn-square btn-light rounded-circle me-2" href="https://twitter.com/mfj_100"><i
+                        <a class="btn btn-square btn-light rounded-circle me-2" target="_blank" href="https://twitter.com/mfj_100"><i
                                 class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-light rounded-circle me-2" href="https://www.facebook.com/profile.php?id=100010813418794"><i
+                        <a class="btn btn-square btn-light rounded-circle me-2" target="_blank" href="https://www.facebook.com/profile.php?id=100010813418794"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-light rounded-circle me-2" href="https://www.instagram.com/mfj.100/"><i
+                        <a class="btn btn-square btn-light rounded-circle me-2" target="_blank" href="https://www.instagram.com/mfj.100/"><i
                                 class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square btn-light rounded-circle me-2" href="https://www.linkedin.com/in/maysara-aljauar-98a849217/"><i
+                        <a class="btn btn-square btn-light rounded-circle me-2" target="_blank" href="https://www.linkedin.com/in/maysara-aljauar-98a849217/"><i
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-3">
                     <h4 class="text-white mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Ms</a>
-                    <a class="btn btn-link" href="">Contact Ms</a>
-                    <a class="btn btn-link" href="">My Services</a>
-                    <!-- <a class="btn btn-link" href="">Terms & Condition</a> -->
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="{{ route('site.about') }}">About Ms</a>
+                    <a class="btn btn-link" href="{{ route('site.index') }}">Contact Ms</a>
+                    <a class="btn btn-link" href="{{ route('site.services') }}">My Services</a>
+                    <a class="btn btn-link" href="{{ route('site.projects') }}">Projects</a>
                 </div>
                 <div class="col-lg-4 col-md-3">
                     <h4 class="text-white mb-4">Business Hours</h4>
@@ -110,7 +112,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center text-md-center mb-3 mb-md-0">
-                    &copy; <a class="fw-medium text-light" href="#">Maysara Aljayyar</a>, All Right Reserved.
+                    &copy; <a class="fw-medium text-light" href="{{ route('admin.index') }}">Maysara Aljayyar</a>, All Right Reserved.
                 </div>
 
             </div>

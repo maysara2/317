@@ -32,12 +32,12 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Content</th>
+                                        <th>link</th>
                                         <th>image1</th>
                                         <th>image2</th>
                                         <th>image3</th>
                                         <th>image4</th>
-                                        <th>link</th>
-                
+
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -59,12 +59,12 @@
                                             <button class="btn btn-danger" onclick="return confirm('Are you sure')"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
-                                       
+
                                     </tr>
                                     @endforeach
-                                  
+
                                 </tbody>
-                              
+
                             </table>
                         </div>
                     </div>

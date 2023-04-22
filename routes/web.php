@@ -48,6 +48,11 @@ Route::prefix('admin')->name('admin.')->middleware('auth','check_user')->group(f
 
 
     Route::get('/',[MainController::class,'home'])->name('site.index');
+    Route::get('/project/{id}',[MainController::class,'project'])->name('site.project');
+    Route::get('/projects',[MainController::class,'projects'])->name('site.projects');
+    Route::get('/about',[MainController::class,'about'])->name('site.about');
+    Route::get('services',[MainController::class,'services'])->name('site.services');
+    Route::get('contact',[MainController::class,'contact'])->name('site.contact');
 });
 
 Auth::routes();
