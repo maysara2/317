@@ -8,7 +8,7 @@
 <div class="container-fluid bg-primary text-white d-none d-lg-flex">
  <div class="container py-3">
      <div class="d-flex align-items-center">
-         <a href="index.html">
+         <a href="{{ route('site.index') }}">
              <h2 class="text-white fw-bold m-0">Maysara</h2>
          </a>
          <div class="ms-auto d-flex align-items-center">

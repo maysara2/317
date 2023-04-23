@@ -26,7 +26,14 @@ return[
     'mony'=>'Pleased with your nice review, if you have any inquiries, questions or suggestions that you would like to share with me, please feel free to contact me via the contact form on my personal website
     Or on the same number via WhatsApp.
     I look forward to hearing your comments and feedback and working with you to improve your experience with my services. Thank you for visiting my personal site!',
-'conn1'=>'Contact me via e-mail',
+    'conn1'=>'Contact me via e-mail',
+    'homett'=>'Home',
+    'aboutt'=>'About',
+    'serttt'=>'Services',
+    'porttt'=>'Projects',
+    'conttt'=>'Contact',
+    'Contact With Me'=>' Contact With Me',
+
 
 
 

@@ -14,10 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@500;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@700&display=swap" rel="stylesheet">
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -35,6 +32,23 @@
     <link href="{{ asset('siteasset/css/style.css') }}" rel="stylesheet">
 
 
+    @if (app()->currentLocale() =='ar')
+<style>
+    .about {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)),url('{{ asset('siteasset/img/maysara.jpg') }}');
+    background-size: cover;
+}
+
+</style>
+@endif
+@if (app()->currentLocale() =='en')
+<style>
+    .about {
+    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)),url('{{ asset('siteasset/img/maysara1.jpg') }}');
+    background-size: cover;
+}
+</style>
+@endif
 </head>
 {{--  @if (app()->currentLocale() =='ar')
 <style>

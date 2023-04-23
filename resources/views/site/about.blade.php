@@ -27,7 +27,7 @@
 <div class="container-fluid bg-primary text-white d-none d-lg-flex">
  <div class="container py-3">
      <div class="d-flex align-items-center">
-         <a href="index.html">
+         <a href="{{ route('site.index') }}">
              <h2 class="text-white fw-bold m-0">Maysara</h2>
          </a>
          <div class="ms-auto d-flex align-items-center">
@@ -100,10 +100,15 @@
     <div class="container-xxl about my-5">
         <div class="container">
             <div class="row g-0">
+                @if (app()->currentLocale() =='ar')
+                <div class="col-lg-6">
+
+                </div>
+                 @endif
               @foreach ($looly as $about)
-              <div class="col-lg-6 pt-lg-5 wow fadeIn" data-wow-delay="0.5s">
+              <div class="col-lg-6 pt-lg-5 wow fadeIn " data-wow-delay="0.5s" @if (app()->currentLocale() =='ar')dir="rtl"@endif>
                 <div class="bg-white rounded-top p-5 mt-lg-5">
-                    <p class="fs-5 fw-medium text-primary">{{ __('site.about') }}</p>
+                    <p class="fs-5 fw-medium text-primary" >{{ __('site.about') }}</p>
                     <h1 class="display-6 mb-4">{{ $about->$bigtitle }}</h1>
                     <p class="mb-4"> {{ $about->$bigcontent }} </p>
                     <div class="row g-5 pt-2 mb-5">
@@ -118,7 +123,8 @@
                             <span>{{ __('site.yy') }}</span>
                         </div>
                     </div>
-        
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="
+                    {{ route('site.about') }}">{{ __('site.more') }}</a>
                 </div>
             </div>
               @endforeach
@@ -126,7 +132,3 @@
             </div>
         </div>
     </div>
-
-    <!-- About End -->
-
-

@@ -39,7 +39,7 @@ $content = 'content_' . app()->currentLocale();
 <div class="container-fluid bg-primary text-white d-none d-lg-flex">
  <div class="container py-3">
      <div class="d-flex align-items-center">
-         <a href="index.html">
+         <a href="{{ route('site.index') }}">
              <h2 class="text-white fw-bold m-0">Maysara</h2>
          </a>
          <div class="ms-auto d-flex align-items-center">
@@ -84,7 +84,7 @@ $content = 'content_' . app()->currentLocale();
 
 
     <!-- Features Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5"  @if (app()->currentLocale() =='ar') dir="rtl" @endif>
         <div class="container">
             <div class="row g-0 feature-row">
 
@@ -96,8 +96,8 @@ $content = 'content_' . app()->currentLocale();
                         <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
                             <img class="img-fluid" src="{{ asset('uploads/service2/'.$ser2->image) }}" alt="Icon">
                         </div>
-                        <h5 class="mb-3">{{ $ser2->$title }}</h5>
-                        <p class="mb-0">{{ $ser2->$content }}</p>
+                        <h5 class="mb-3" @if (app()->currentLocale() =='ar') dir="auto" @endif>{{ $ser2->$title }}</h5>
+                        <p class="mb-0"  @if (app()->currentLocale() =='ar') dir="auto" @endif>{{ $ser2->$content }}</p>
                     </div>
                 </div>
                 @endforeach

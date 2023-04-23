@@ -80,22 +80,22 @@ $content = 'content_' . app()->currentLocale();
 
 
     <!-- Carousel Start -->
-<div class="container-fluid px-0 mb-5">
+<div class="container-fluid px-0 mb-5" @if (app()->currentLocale() =='ar') dir="rtl" @endif>
     <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             @foreach ($setting as $dd)
             <div class="carousel-item active">
-                <img class="w-100" src="{{ asset('siteasset/img/png.jpeg') }}" alt="Image">
+                <img class="w-100"  @if (app()->currentLocale() =='ar') src="{{ asset('siteasset/img/png1.jpeg')  }}" @endif src="{{ asset('siteasset/img/png.jpeg')  }}" alt="Image">
                 <div class="carousel-caption">
                     <div class="container">
                         <div class="row justify-content-start">
-                            <div class="col-lg-7  text-start">
-                                <p class="fs-4 text-white animated slideInRight"> {{ __('site.my') }}
+                            <div class="col-lg-7  text-start  @if (app()->currentLocale() =='ar') text-end @endif">
+                                <p class="fs-4 text-white animated slideInRight  @if (app()->currentLocale() =='ar') slideInLeft @endif"> {{ __('site.my') }}
                                     <strong>{{ __('site.myw') }}</strong>
                                 </p>
-                                <h2 class="display-1 text-white mb-4 animated slideInRight">{{ $setting->$contentimage }}</h2>
-                                <a href="mycv.pdf"
-                                    class="btn btn-primary rounded-pill py-3 px-5 animated slideInRight">{{ __('site.more') }}</a>
+                                <h2 class="display-1 text-white mb-4 animated slideInRight @if (app()->currentLocale() =='ar') slideInLeft @endif">{{ $setting->$contentimage }}</h2>
+                                <a target="_blank"  href="{{ asset('siteasset/img/mycv.pdf') }}"
+                                    class="btn btn-primary rounded-pill py-3 px-5 animated slideInRight @if (app()->currentLocale() =='ar') slideInLeft @endif">{{ __('site.more') }}</a>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ $content = 'content_' . app()->currentLocale();
 
 
     <!-- Features Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5"  @if (app()->currentLocale() =='ar') dir="rtl" @endif>
         <div class="container">
             <div class="row g-0 feature-row">
 
@@ -124,8 +124,8 @@ $content = 'content_' . app()->currentLocale();
                         <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
                             <img class="img-fluid" src="{{ asset('uploads/service2/'.$ser2->image) }}" alt="Icon">
                         </div>
-                        <h5 class="mb-3">{{ $ser2->$title }}</h5>
-                        <p class="mb-0">{{ $ser2->$content }}</p>
+                        <h5 class="mb-3" @if (app()->currentLocale() =='ar') dir="auto" @endif>{{ $ser2->$title }}</h5>
+                        <p class="mb-0"  @if (app()->currentLocale() =='ar') dir="auto" @endif>{{ $ser2->$content }}</p>
                     </div>
                 </div>
                 @endforeach
@@ -140,10 +140,15 @@ $content = 'content_' . app()->currentLocale();
     <div class="container-xxl about my-5">
         <div class="container">
             <div class="row g-0">
+                @if (app()->currentLocale() =='ar')
+                <div class="col-lg-6">
+
+                </div>
+                 @endif
               @foreach ($about as $about)
-              <div class="col-lg-6 pt-lg-5 wow fadeIn" data-wow-delay="0.5s">
+              <div class="col-lg-6 pt-lg-5 wow fadeIn " data-wow-delay="0.5s" @if (app()->currentLocale() =='ar')dir="rtl"@endif>
                 <div class="bg-white rounded-top p-5 mt-lg-5">
-                    <p class="fs-5 fw-medium text-primary">{{ __('site.about') }}</p>
+                    <p class="fs-5 fw-medium text-primary" >{{ __('site.about') }}</p>
                     <h1 class="display-6 mb-4">{{ $about->$bigtitle }}</h1>
                     <p class="mb-4"> {{ $about->$bigcontent }} </p>
                     <div class="row g-5 pt-2 mb-5">
@@ -171,8 +176,14 @@ $content = 'content_' . app()->currentLocale();
 
 
 
+
+
+
+
+
+
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5 ">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <p class="fs-5 fw-medium text-primary">{{ __('site.service') }}</p>
@@ -207,7 +218,7 @@ $content = 'content_' . app()->currentLocale();
     <!-- Project Start -->
     <div class="container-xxl pt-5">
         <div class="container">
-            <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
+            <div class="pb-5 pb-md-0 text-md-start text-center wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
                 <p class="fs-5 fw-medium text-primary">{{ __('site.project') }}</p>
                 <h1 class="display-5 mb-5">{{ __('site.pro') }}</h1>
@@ -225,7 +236,7 @@ $content = 'content_' . app()->currentLocale();
                         </div>
                     </div>
                     <div class="p-4">
-                        <a class="d-block h5" href="">{{ $gg->$name }}</a>
+                        <a class="d-block h5" href="{{ route('site.project',$gg->id) }} " @if (app()->currentLocale() =='ar')dir="rtl" @endif >{{ $gg->$name }}</a>
                         <span>{{ $gg->$content }}</span>
                     </div>
                 </div>
@@ -248,17 +259,22 @@ $content = 'content_' . app()->currentLocale();
 
     <!-- Quote Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
+        <div class="container ">
+            <div class="row g-5" @if (app()->currentLocale() =='ar')dir="rtl" @endif>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="fs-5 fw-medium text-primary">{{ __('site.conn') }}</p>
                     <h1 class="display-5 mb-4">{{ __('site.myy') }}</h1>
                     <h4 class="m-4">{{ __('site.mony') }}</h4>
                     {{--  <h6 class="mb-4">I look forward to hearing your comments and feedback and working with you to improve your experience with my services. Thank you for visiting my personal website!</h6>  --}}
-                    <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="tel:00972594841338">
+
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp  " data-wow-delay="0.5s">
+
+                    <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="https://api.whatsapp.com/send?phone=00972594841338">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
-                            {{--  <i class="fa-brands fa-whatsapp"></i>  --}}
-                            <img width="55" src="{{ asset('siteasset/img/whatsapp.png') }}" alt="">
+                              <i class="fa fa-phone" style="color: white"></i>
+
 
                         </span>
                         <a href="https://api.whatsapp.com/send?phone=00972594841338"><span class="fs-5 fw-medium mx-4">{{ __('site.conn') }}</span></a>
@@ -266,14 +282,35 @@ $content = 'content_' . app()->currentLocale();
                     <br >
                     <a class="mt-4 d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="mailto:m.aljauar@gmail.com">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
-                            <img width="55" src="{{ asset('siteasset/img/gmail_logo_media_social_icon.png') }}" alt="">
+                            <i class="fa fa-envelope" style="color: white; width=55;"></i>
+
+
                         </span>
                         <a href="mailto:m.aljauar@gmail.com"><span class="fs-5 fw-medium mx-4 ">{{ __('site.conn1') }}</span></a>
                     </a>
-                </div>
 
-            </div>
+                </div>
+        </div>
         </div>
     </div>
     <!-- Quote Start -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

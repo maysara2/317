@@ -13,7 +13,7 @@ $content = 'content_' . app()->currentLocale();
 <div class="container-fluid bg-primary text-white d-none d-lg-flex">
  <div class="container py-3">
      <div class="d-flex align-items-center">
-         <a href="index.html">
+         <a href="{{ route('site.index') }}">
              <h2 class="text-white fw-bold m-0">Maysara</h2>
          </a>
          <div class="ms-auto d-flex align-items-center">
@@ -66,9 +66,8 @@ $content = 'content_' . app()->currentLocale();
         <div class="container">
             <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-                <p class="fs-5 fw-medium text-primary">Our Projects</p>
-                <h1 class="display-5 mb-5">We've Done Lot's of Awesome Projects</h1>
-            </div>
+                <p class="fs-5 fw-medium text-primary">{{ __('site.project') }}</p>
+                <h1 class="display-5 mb-5">{{ __('site.pro') }}</h1></div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
               @foreach ($lol as $lol)
               <div class="project-item mb-5">
@@ -77,12 +76,12 @@ $content = 'content_' . app()->currentLocale();
                     <div class="project-overlay">
                         <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{ asset('uploads/project/'.$lol->image_a) }}"
                             data-lightbox="project"><i class="fa fa-eye"></i></a>
-                        <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
+                        <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{ route('site.project',$lol->id) }}"><i
                                 class="fa fa-link"></i></a>
                     </div>
                 </div>
                 <div class="p-4">
-                    <a class="d-block h5" href="">{{ $lol->$name }}</a>
+                    <a class="d-block h5" href="{{ route('site.project',$lol->id) }}"@if (app()->currentLocale() =='ar')dir="rtl" @endif>{{ $lol->$name }}</a>
                     <span>{{ $lol->$content }}</span>
                 </div>
             </div>

@@ -27,7 +27,7 @@
 <div class="container-fluid bg-primary text-white d-none d-lg-flex">
  <div class="container py-3">
      <div class="d-flex align-items-center">
-         <a href="index.html">
+         <a href="{{ route('site.index') }}">
              <h2 class="text-white fw-bold m-0">Maysara</h2>
          </a>
          <div class="ms-auto d-flex align-items-center">
@@ -95,24 +95,23 @@
 
 
 
-    <!-- Quote Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-
-            <div class="row g-5">
-
+        <div class="container ">
+            <div class="row g-5" @if (app()->currentLocale() =='ar')dir="rtl" @endif>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="fs-5 fw-medium text-primary">{{ __('site.conn') }}</p>
                     <h1 class="display-5 mb-4">{{ __('site.myy') }}</h1>
                     <h4 class="m-4">{{ __('site.mony') }}</h4>
                     {{--  <h6 class="mb-4">I look forward to hearing your comments and feedback and working with you to improve your experience with my services. Thank you for visiting my personal website!</h6>  --}}
-
+                 
                 </div>
-                <div class="col-lg-6 wow fadeInUp mx-6" data-wow-delay="0.1s">
+               
+                <div class="col-lg-6 wow fadeInUp  " data-wow-delay="0.5s">
+                
                     <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="tel:00972594841338">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
-                            {{--  <i class="fa-brands fa-whatsapp"></i>  --}}
-                            <img width="55" src="{{ asset('siteasset/img/whatsapp.png') }}" alt="">
+                              <i class="fa fa-phone" style="color: white"></i>
+                          
 
                         </span>
                         <a href="https://api.whatsapp.com/send?phone=00972594841338"><span class="fs-5 fw-medium mx-4">{{ __('site.conn') }}</span></a>
@@ -120,13 +119,14 @@
                     <br >
                     <a class="mt-4 d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="mailto:m.aljauar@gmail.com">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
-                            <img width="55" src="{{ asset('siteasset/img/gmail_logo_media_social_icon.png') }}" alt="">
+                            <i class="fa fa-envelope" style="color: white; width=55;"></i>
+
+            
                         </span>
                         <a href="mailto:m.aljauar@gmail.com"><span class="fs-5 fw-medium mx-4 ">{{ __('site.conn1') }}</span></a>
                     </a>
+             
                 </div>
-            </div>
+        </div>
         </div>
     </div>
-    <!-- Quote Start -->
-
